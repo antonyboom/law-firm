@@ -1,1 +1,185 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles-variables";
+
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+*, ::after, ::before {
+  /* box-sizing: border-box; */
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+  background: rgba(255,255,255,1);
+}
+
+header.home {
+  /* The image used */
+
+  background:linear-gradient(rgba(125,125,125,0.1), rgba(125,125,125,0.4), rgba(250,250,250,1)), url("assets/justice-back.jpg");
+
+  /* Full height */
+  //filter: brightness(0.9);
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+header.home::before {
+  filter: brightness(50%);
+}
+
+section.services, section.about, section.contacts{
+  min-height: 500px;
+}
+
+section.services {
+  padding: 24px;
+
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #f9f9f9), color-stop(50%, #f9f9f9), color-stop(100%, #f9fafa));
+  background: -webkit-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: -o-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: -ms-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
+}
+
+section.about {
+  padding: 24px;
+
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, #f9fafa 0%, #f9f9f9 50%, #f9f9f9 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #f9fafa), color-stop(50%, #f9f9f9), color-stop(100%, #f9f9f9));
+  background: -webkit-linear-gradient(top, #f9fafa 0%, #f9f9f9 50%, #f9f9f9 100%);
+  background: -o-linear-gradient(top, #f9fafa 0%, #f9f9f9 50%, #f9f9f9 100%);
+  background: -ms-linear-gradient(top, #f9fafa 0%, #f9f9f9 50%, #f9f9f9 100%);
+  background: linear-gradient(to bottom, #f9fafa 0%, #f9f9f9 50%, #f9f9f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+}
+
+section.contacts {
+  background: linear-gradient(rgba(249, 249, 249, 1), rgba(249, 249, 249, 0.1), rgba(255, 255, 255, 0.1)), url("assets/contact_us_web.jpg");
+
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+/* sticky toolbar */
+
+.sticky-header {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+/* app footer */
+footer {
+  min-height: 50px;
+  display: block;
+  width: 100%;
+  position: absolute;
+  margin-top: -15px;
+
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #f9f9f9), color-stop(50%, #f9f9f9), color-stop(100%, #f9fafa));
+  background: -webkit-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: -o-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: -ms-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  background: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
+  //background: rgb(49,66,77); /* Old browsers */
+  //background: -moz-linear-gradient(left, rgba(49,66,77,1) 0%, rgba(103,128,140,1) 50%, rgba(49,66,77,1) 100%); /* FF3.6-15 */
+  //background: -webkit-linear-gradient(left, rgba(49,66,77,1) 0%,rgba(103,128,140,1) 50%,rgba(49,66,77,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  //background: linear-gradient(to right, rgba(49,66,77,1) 0%,rgba(103,128,140,1) 50%,rgba(49,66,77,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31424d', endColorstr='#31424d',GradientType=1 ); /* IE6-9 */
+
+}
+
+.logo {
+  width: 200px;
+}
+
+.nav-link {
+  padding: 1.1em 1em!important;
+}
+
+
+/* header styles */
+
+@media (min-width: 768px) {
+  header.home .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+
+  header.home .intro-text .intro-lead-in {
+    font-size: 40px;
+    font-style: italic;
+    line-height: 40px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif','Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+
+  header.home .intro-text .intro-heading {
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 75px;
+    margin-bottom: 50px;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+}
+
+
+h2.section-heading {
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
