@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
+  MatButtonModule,
   MatCardModule, MatGridListModule,
   MatToolbarModule
 } from '@angular/material';
@@ -15,6 +16,7 @@ import { HomeComponent } from './ui/main/home/home.component';
 import { ServicesComponent } from './ui/main/services/services.component';
 import { AboutComponent } from './ui/main/about/about.component';
 import { ContactsComponent } from './ui/main/contacts/contacts.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ContactsComponent } from './ui/main/contacts/contacts.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatCardModule,
+    MatButtonModule,
     MatToolbarModule,
     MatGridListModule,
     AppRoutingModule,
