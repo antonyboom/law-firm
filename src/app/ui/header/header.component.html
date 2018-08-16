@@ -2,12 +2,12 @@
 
   <mat-toolbar-row>
 
-      <div fxLayout="row wrap" fxLayoutGap="2rem" fxLayoutAlign="space-around center" [ngStyle]="{'margin':'0 auto'}">
-        <button mat-flat-button class="custom-style" color="accent">УСЛУГИ</button>
-        <button mat-flat-button class="custom-style" color="accent">ПОРТФОЛИО</button>
-        <button mat-flat-button class="custom-style" color="accent">О НАС</button>
-        <button mat-flat-button class="custom-style" color="accent">КОНТАКТЫ</button>
-      </div>
+    <div fxLayout="row wrap" fxLayoutGap="2rem" fxLayoutAlign="space-around center" [ngStyle]="{'margin':'0 auto'}">
+      <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('home', 200)">ГЛАВНАЯ</button>
+      <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('services', 200)">УСЛУГИ</button>
+      <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('about', 200)">О НАС</button>
+      <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('contacts', 200)">КОНТАКТЫ</button>
+    </div>
 
   </mat-toolbar-row>
 
@@ -16,8 +16,8 @@
 </mat-toolbar>
 
 <!--<mat-menu #menu="matMenu">-->
-  <!--<button mat-menu-item>Услуги</button>-->
-  <!--<button mat-menu-item>Портфолио</button>-->
-  <!--<button mat-menu-item>О нас</button>-->
-  <!--<button mat-menu-item>Контакты</button>-->
+<!--<button mat-menu-item>Услуги</button>-->
+<!--<button mat-menu-item>Портфолио</button>-->
+<!--<button mat-menu-item>О нас</button>-->
+<!--<button mat-menu-item>Контакты</button>-->
 <!--</mat-menu>-->

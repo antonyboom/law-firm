@@ -1,72 +1,23 @@
-<div class="container-fluid">
+<div fxFlex fxLayout="row">
 
-  <div class="col-lg-12 text-center">
-    <h2 class="section-heading text-uppercase">УСЛУГИ</h2>
-  </div>
+  <div fxLayout="column" class="container" >
 
-  <div class="row" [ngStyle]="{'justify-content':'space-evenly'}">
+    <div class="row">
+      <div class="col-xs-12 text-center" fxFlex="100">
+        <h2 class="section-heading text-uppercase">УСЛУГИ</h2>
+      </div>
+    </div>
 
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Взыскание долга</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Исполнительное производство</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Административное производство</p>
-    </mat-card>
-
-  </div>
-
-  <div class="row" [ngStyle]="{'justify-content':'space-evenly'}">
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Абонентское обслуживание организаций</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Дела о несостоятельности (банкротстве)</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Гражданские дела</p>
-    </mat-card>
+    <div class="row" [ngStyle]="{'justify-content':'space-evenly'}" [@fadeListAnimation] *ngIf="activated">
+      <div *ngFor="let item of services; let i = index; let even = even;" >
+        <mat-card class="service-card"
+                  (click)="showDescription(item)"
+                  [ngStyle]="{'width':'400px', 'margin':'10px'}">
+          <p>{{item.name}}</p>
+        </mat-card>
+      </div>
+    </div>
 
   </div>
 
-  <div class="row" [ngStyle]="{'justify-content':'space-evenly'}">
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Защита прав потребителей</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Земельные споры</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Наследственное право</p>
-    </mat-card>
-
-  </div>
-
-  <div class="row" [ngStyle]="{'justify-content':'space-evenly'}">
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Налоговые споры</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Семейные споры</p>
-    </mat-card>
-
-    <mat-card [ngStyle]="{'width':'360px', 'margin':'10px'}">
-      <p>Авторское право</p>
-    </mat-card>
-
-  </div>
 </div>
-
-

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
-  MatCardModule, MatGridListModule,
+  MatCardModule, MatDialogModule, MatGridListModule,
   MatToolbarModule
 } from '@angular/material';
 import { HeaderComponent } from './ui/header/header.component';
@@ -17,6 +17,7 @@ import { ServicesComponent } from './ui/main/services/services.component';
 import { AboutComponent } from './ui/main/about/about.component';
 import { ContactsComponent } from './ui/main/contacts/contacts.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { DescriptionComponent } from './ui/main/services/desctiption/description.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     HomeComponent,
     ServicesComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +39,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatButtonModule,
     MatToolbarModule,
     MatGridListModule,
+    MatDialogModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DescriptionComponent]
 })
 export class AppModule { }
