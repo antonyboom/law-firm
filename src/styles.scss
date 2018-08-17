@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "styles-variables";
-
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
-
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Infant');
 
 /*
@@ -33,7 +30,6 @@ a:hover {
   border: 1px solid #fff;
 }
 
-
 /*
  * Base structure
  */
@@ -43,40 +39,41 @@ body {
   height: 100%;
   font-family: 'Cormorant Infant', serif;
 
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
   background: -moz-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, #f9f9f9), color-stop(50%, #f9f9f9), color-stop(100%, #f9fafa));
   background: -webkit-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: -o-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: -ms-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=1);
 }
+
 body {
   //color: #fff;
   text-align: center;
 
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
 }
 
 header.home {
   /* The image used */
-  background:linear-gradient(rgba(125,125,125,1), rgba(125,125,125,0.1), rgba(125,125,125,1)), url("assets/home.jpg");
+  background: linear-gradient(rgba(125, 125, 125, 1), rgba(125, 125, 125, 0.1), rgba(125, 125, 125, 1)), url("assets/home.jpg");
 }
 
 section.services {
   /* The image used */
-  background:linear-gradient(rgba(125,125,125,1), rgba(125,125,125,0.1), rgba(125,125,125,1)), url("assets/services.jpg");
+  background: linear-gradient(rgba(125, 125, 125, 1), rgba(125, 125, 125, 0.1), rgba(125, 125, 125, 1)), url("assets/services.jpg");
 }
 
 section.about {
   /* The image used */
-  background:linear-gradient(rgba(125,125,125,1), rgba(125,125,125,0.1), rgba(125,125,125,1)), url("assets/about-us-web.jpg");
+  background: linear-gradient(rgba(125, 125, 125, 1), rgba(125, 125, 125, 0.1), rgba(125, 125, 125, 1)), url("assets/about-us-web.jpg");
 }
 
 section.contacts {
   /* The image used */
-  background:linear-gradient(rgba(125,125,125,1), rgba(125,125,125,0.1), rgba(125,125,125,1)), url("assets/contact-us.jpg");
+  background: linear-gradient(rgba(125, 125, 125, 1), rgba(125, 125, 125, 0.1), rgba(125, 125, 125, 1)), url("assets/contact-us.jpg");
 }
 
 @media (min-width: 768px) {
@@ -93,7 +90,6 @@ header.home, section.services, section.about, section.contacts {
   background-position: center center;
   background-size: cover;
 }
-
 
 header.home::before, section.services::before, section.about::before, section.contacts::before {
   filter: brightness(50%);
@@ -123,7 +119,6 @@ section.services h2, section.about h2, section.contacts h2 {
 //  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
 //
 //}
-
 
 //section.services {
 //  background: linear-gradient(rgba(249, 249, 249, 1), rgba(249, 249, 249, 0.1), rgba(255, 255, 255, 0.1)), url("assets/services.jpg");
@@ -172,14 +167,14 @@ footer {
   position: absolute;
   margin-top: -15px;
 
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
   background: -moz-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, #f9f9f9), color-stop(50%, #f9f9f9), color-stop(100%, #f9fafa));
   background: -webkit-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: -o-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: -ms-linear-gradient(left, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
   background: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #f9fafa 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=1);
 }
 
 .logo {
@@ -187,9 +182,8 @@ footer {
 }
 
 .nav-link {
-  padding: 1.1em 1em!important;
+  padding: 1.1em 1em !important;
 }
-
 
 /* header styles */
 
@@ -217,7 +211,16 @@ h2.section-heading {
   cursor: pointer;
 }
 
-
 .mat-card {
   color: rgba(0, 0, 0, 0.6);
+}
+
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+  background-color: blue !important;
+}
+
+mat-list .mat-list-item .mat-list-icon, .mat-list .mat-list-option .mat-list-icon, .mat-nav-list .mat-list-item .mat-list-icon, .mat-nav-list .mat-list-option .mat-list-icon, .mat-selection-list .mat-list-item .mat-list-icon, .mat-selection-list .mat-list-option .mat-list-icon {
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 48px !important;
 }

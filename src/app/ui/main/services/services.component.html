@@ -8,7 +8,8 @@
       </div>
     </div>
 
-    <div class="row" [ngStyle]="{'justify-content':'space-evenly'}" [@fadeListAnimation] *ngIf="activated">
+    <div class="row" [ngStyle]="{'justify-content':'space-evenly'}"
+         *ngIf="activated">
       <div *ngFor="let item of services; let i = index; let even = even;" >
         <mat-card class="service-card"
                   (click)="showDescription(item)"
