@@ -13,7 +13,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #cea952;
 }
 
 *, ::after, ::before {
@@ -176,7 +176,12 @@ h2.section-heading {
   }
 }
 
-.service-card {
+.service-card, .info-card {
+  box-shadow: 0 3px 1px -2px #d5b15a, 0 2px 2px 0 #c09641, 0 1px 5px 0 #b88c36 !important;
+}
+
+.contacts-card {
+  background-color: #0000004d;
   box-shadow: 0 3px 1px -2px #d5b15a, 0 2px 2px 0 #c09641, 0 1px 5px 0 #b88c36 !important;
 }
 
@@ -199,4 +204,18 @@ mat-list .mat-list-item .mat-list-icon, .mat-list .mat-list-option .mat-list-ico
   width: 48px !important;
   height: 48px !important;
   font-size: 48px !important;
+}
+
+
+.map {
+  height: 50vh;
+}
+
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #edd07a;
+}
+
+.mat-form-field-label {
+  color: #edd07a;
 }
