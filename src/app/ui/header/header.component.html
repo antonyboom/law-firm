@@ -2,22 +2,29 @@
 
   <mat-toolbar-row>
 
-    <div fxLayout="row wrap" fxLayoutGap="2rem" fxLayoutAlign="space-around center" [ngStyle]="{'margin':'0 auto'}">
+    <div fxHide.lt-sm fxLayout="row wrap" fxLayoutGap="2rem" fxLayoutAlign="space-around center" [ngStyle]="{'margin':'0 auto'}">
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('home', 200)">ГЛАВНАЯ</button>
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('services', 200)">УСЛУГИ</button>
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('about', 200)">О НАС</button>
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('contacts', 200)">КОНТАКТЫ</button>
     </div>
 
-  </mat-toolbar-row>
+    <div fxHide.gt-xs fxLayoutAlign="center center" fxFlex="100">
+      <button  color="accent" mat-button [matMenuTriggerFor]="menu">
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+      </button>
+    </div>
 
-  <!--<button mat-button [matMenuTriggerFor]="menu">Menu</button>-->
+  </mat-toolbar-row>
 
 </mat-toolbar>
 
-<!--<mat-menu #menu="matMenu">-->
-<!--<button mat-menu-item>Услуги</button>-->
-<!--<button mat-menu-item>Портфолио</button>-->
-<!--<button mat-menu-item>О нас</button>-->
-<!--<button mat-menu-item>Контакты</button>-->
-<!--</mat-menu>-->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="scrollToAnchor('home', 200)">ГЛАВНАЯ</button>
+  <button mat-menu-item (click)="scrollToAnchor('services', 200)">УСЛУГИ</button>
+  <button mat-menu-item (click)="scrollToAnchor('about', 200)">О НАС</button>
+  <button mat-menu-item (click)="scrollToAnchor('contacts', 200)">КОНТАКТЫ</button>
+
+</mat-menu>

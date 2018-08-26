@@ -5,7 +5,15 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
-  MatCardModule, MatDialogModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import { HeaderComponent } from './ui/header/header.component';
@@ -44,6 +52,8 @@ import { DescriptionComponent } from './ui/main/services/desctiption/description
     MatListModule,
     MatIconModule,
     MatDialogModule,
+    MatMenuModule,
+    MatTabsModule,
     AppRoutingModule,
   ],
   providers: [],

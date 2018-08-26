@@ -1,15 +1,20 @@
-<div fxLayout="row wrap">
+<div fxFlex fxLayout="row">
 
-    <div fxLayout.xs="column" fxLayoutAlign="center center">
+  <div fxLayout="column" class="container-fluid">
 
-      <div class="intro-text">
-        <div><img src="assets/logo_final3.png" [ngStyle]="{'width':'45vw'}"></div>
-        <div class="intro-lead-in"></div>
+    <div class="row">
+      <div class="col-xs-12 text-center" fxFlex="100">
+        <div class="intro-text">
+          <div><img src="assets/logo_final3.png" class="brand-home-image" [ngStyle]="{'width':'45vw'}"></div>
+          <div class="intro-lead-in"></div>
+        </div>
       </div>
-
-
     </div>
 
-    <div class="company-text">Aut viam inveniam aut faciam || Или я найду дорогу или проложу ее</div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxFlex="90vw">
+      <div class="company-text">Aut viam inveniam aut faciam || Или я найду дорогу или проложу ее</div>
+    </div>
+
+  </div>
 
 </div>
