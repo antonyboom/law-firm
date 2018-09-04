@@ -26,6 +26,7 @@ import { AboutComponent } from './ui/main/about/about.component';
 import { ContactsComponent } from './ui/main/contacts/contacts.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { DescriptionComponent } from './ui/main/services/desctiption/description.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,9 @@ import { DescriptionComponent } from './ui/main/services/desctiption/description
     MatMenuModule,
     MatTabsModule,
     AppRoutingModule,
+
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

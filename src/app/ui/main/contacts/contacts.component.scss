@@ -1,11 +1,20 @@
 .contacts {
-  font-size: 2vh !important;
+  font-size: 4vh;
   color: #edd07a;
   text-align: left;
+  width: 100%;
 }
 
+.input-row {
+  color: #edd07a;
+}
 
 @media screen and (max-width: 959px) {
+  font-size: 3vh !important;
 
+}
+
+@media screen and (max-width: 500px) {
+  font-size: 2vh !important;
 }
 

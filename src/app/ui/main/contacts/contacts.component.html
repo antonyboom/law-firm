@@ -1,73 +1,77 @@
 <div fxFlex fxLayout="row">
 
-  <div fxLayout="column" class="container-fluid">
+  <div fxLayout="column" class="container">
 
     <div class="row">
-      <h2 align="center" class="section-heading text-uppercase">КОНТАКТЫ</h2>
+      <div class="col-xs-12 text-center" fxFlex="100">
+        <h2 class="section-heading text-uppercase">КОНТАКТЫ</h2>
+      </div>
     </div>
 
-    <div fxFlex="100" fxLayoutAlign="center" fxLayoutGap="20px">
+    <div class="row">
 
-      <div fxLayout="column" fxFlex="50">
-
-        <div class="map">
-          <iframe src="https://yandex.com/map-widget/v1/-/CBu-7SUoPB"
-                  frameborder="1"
-                  width="100%"
-                  height="100%"
-                  allowfullscreen="true">
-          </iframe>
-        </div>
-
-        <mat-card class="contacts-card" [ngStyle]="{'margin':'10px 0'}">
-
-          <mat-list>
-
-            <mat-list-item>
-              <mat-icon color="accent" mat-list-icon>phone</mat-icon>
-              <p mat-line class="contacts"> +7-499-391-13-63</p>
-              <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
-            </mat-list-item>
-
-
-            <mat-list-item>
-              <mat-icon color="accent" mat-list-icon>pin_drop</mat-icon>
-              <p mat-line class="contacts"> 107113, Москва, Сокольнический вал, 2А</p>
-              <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
-            </mat-list-item>
-
-
-            <mat-list-item>
-              <mat-icon color="accent" mat-list-icon>alternate_email</mat-icon>
-              <p mat-line class="contacts">inbox@ka-triumf.ru</p>
-            </mat-list-item>
-
-          </mat-list>
-
-        </mat-card>
-
-      </div>
-
-      <div fxLayout="column" fxFlex="50">
-
-        <mat-card class="contacts-card" >
-
-          <p class="contacts" [ngStyle]="{'text-align':'center'}">
-            Вы всегда можете задать свой вопрос онлайн и мы свяжемся с вами в кратчайшие сроки.
-          </p>
-
-        </mat-card>
-
-        <mat-card class="contacts-card" [ngStyle]="{'margin':'10px 0'}">
+      <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" [ngStyle]="{'margin':'10px 0'}">
+        <mat-card class="contacts-card">
 
           <mat-card-content>
-            <form autocomplete="off">
+            <mat-list>
+
+              <mat-list-item>
+                <mat-icon fxHide fxShow.gt-xs color="accent" mat-list-icon>phone</mat-icon>
+                <p mat-line class="contacts"> +7-499-391-13-63</p>
+                <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
+              </mat-list-item>
+
+
+              <mat-list-item>
+                <mat-icon fxHide fxShow.gt-xs color="accent" mat-list-icon>pin_drop</mat-icon>
+                <p mat-line class="contacts">
+                  107113, Москва, <br fxHide fxShow.lt-sm>
+                  Сокольнический вал, 2А</p>
+                <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
+              </mat-list-item>
+
+
+              <mat-list-item>
+                <mat-icon fxHide fxShow.gt-xs color="accent" mat-list-icon>alternate_email</mat-icon>
+                <p mat-line class="contacts">inbox@ca-triiumph.ru</p>
+                <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
+              </mat-list-item>
+
+            </mat-list>
+
+            <div class="map">
+              <iframe src="https://yandex.com/map-widget/v1/-/CBu-7SUoPB"
+                      frameborder="1"
+                      width="100%"
+                      height="100%"
+                      allowfullscreen="true">
+              </iframe>
+            </div>
+
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" [ngStyle]="{'margin':'10px 0'}">
+        <mat-card class="contacts-card">
+
+          <mat-card-content>
+            <form [formGroup]="form" novalidate autocomplete="off">
+
+              <div class="input-row">
+                ОБРАТНАЯ СВЯЗЬ
+              </div>
 
               <div class="input-row">
 
                 <mat-form-field appearance="outline" color="accent" fxFlex>
                   <mat-label>Имя</mat-label>
-                  <input matInput placeholder="">
+                  <input matInput placeholder="" formControlName="firstName">
+                  <mat-error *ngIf="form.get('firstName').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+                    Поле обязательно для заполнения
+                  </mat-error>
                 </mat-form-field>
 
               </div>
@@ -76,7 +80,10 @@
 
                 <mat-form-field appearance="outline" color="accent" fxFlex>
                   <mat-label>Фамилия</mat-label>
-                  <input matInput placeholder="">
+                  <input matInput place holder="" formControlName="lastName">
+                  <mat-error *ngIf="form.get('lastName').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+                    Поле обязательно для заполнения
+                  </mat-error>
                 </mat-form-field>
 
               </div>
@@ -85,7 +92,13 @@
 
                 <mat-form-field appearance="outline" color="accent" fxFlex>
                   <mat-label>Почта</mat-label>
-                  <input matInput placeholder="">
+                  <input matInput placeholder="" formControlName="email">
+                  <mat-error *ngIf="form.get('email').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+                    Поле обязательно для заполнения
+                  </mat-error>
+                  <mat-error *ngIf="form.get('email').hasError('email')" [ngStyle]="{'font-size': '10px'}">
+                    Неправильный почтовый адресс
+                  </mat-error>
                 </mat-form-field>
 
               </div>
@@ -99,7 +112,12 @@
                             #autosize="cdkTextareaAutosize"
                             cdkAutosizeMinRows="3"
                             cdkAutosizeMaxRows="3"
-                            placeholder=""></textarea>
+                            formControlName="message"
+                            placeholder="">
+                  </textarea>
+                  <mat-error *ngIf="form.get('message').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+                    Поле обязательно для заполнения
+                  </mat-error>
                 </mat-form-field>
 
               </div>
@@ -107,12 +125,12 @@
             </form>
           </mat-card-content>
 
-          <mat-card-actions align="end">
-            <button type="button" mat-stroked-button color="accent">ОТПРАВИТЬ</button>
+          <mat-card-actions fxLayoutAlign="center center">
+            <button fxFlex="90" (click)="submit(form.valid && form.getRawValue())"
+                    mat-stroked-button color="accent">ОТПРАВИТЬ</button>
           </mat-card-actions>
 
         </mat-card>
-
       </div>
 
     </div>
@@ -120,3 +138,4 @@
   </div>
 
 </div>
+
