@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'mailer/PHPMailerAutoload.php';
 
-if (isset($_POST['firstName']) $$ isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['message'])) {
+if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['message'])) {
 
     //create an instance of PHPMailer
     $mail = new PHPMailer();
@@ -11,12 +11,11 @@ if (isset($_POST['firstName']) $$ isset($_POST['lastName']) && isset($_POST['ema
     $mail->From = $_POST['email'];
     $mail->FromFirstName = $_POST['firstName'];
     $mail->FromLastName = $_POST['lastName'];
-
     $mail->AddAddress('inbox@ca-triumph.ru'); //recipient
     $mail->Subject = $_POST['email'];
     $mail->Body =
 
-    "От: " . $_POST['email'] . "\r\n\r\nСообщение: " . stripslashes($_POST['message']);
+    "От: " . $_POST['firstName'] -  $_POST['lastName'] . "\r\n\r\nСообщение: " . stripslashes($_POST['message']);
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
