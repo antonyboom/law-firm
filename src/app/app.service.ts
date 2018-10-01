@@ -27,6 +27,14 @@ export class AppService {
   }
 
   sendRequest (data) {
+
+    const formData = new FormData();
+
+    formData.append('firstName', data.firstName);
+    formData.append('lastName', data.lastName);
+    formData.append('email', data.email);
+    formData.append('message', data.message);
+
     return this.http.post(environment.sender, data, {
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     });
