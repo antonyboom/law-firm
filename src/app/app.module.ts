@@ -27,6 +27,7 @@ import { ContactsComponent } from './ui/main/contacts/contacts.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { DescriptionComponent } from './ui/main/services/desctiption/description.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+
     FlexLayoutModule,
+
     MatCardModule,
     MatButtonModule,
     MatInputModule,
@@ -55,7 +58,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatDialogModule,
     MatMenuModule,
     MatTabsModule,
+
     AppRoutingModule,
+    HttpClientModule,
 
     FormsModule,
     ReactiveFormsModule

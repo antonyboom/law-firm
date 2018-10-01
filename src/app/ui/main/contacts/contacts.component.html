@@ -57,8 +57,9 @@
       <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" [ngStyle]="{'margin':'10px 0'}">
         <mat-card class="contacts-card">
 
+          <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="submit(form.getRawValue())">
+
           <mat-card-content>
-            <form [formGroup]="form" novalidate autocomplete="off">
 
               <div class="input-row">
                 ОБРАТНАЯ СВЯЗЬ
@@ -122,13 +123,13 @@
 
               </div>
 
-            </form>
           </mat-card-content>
 
           <mat-card-actions fxLayoutAlign="center center">
-            <button fxFlex="90" (click)="submit(form.valid && form.getRawValue())"
-                    mat-stroked-button color="accent">ОТПРАВИТЬ</button>
+            <button fxFlex="90" type="submit" mat-stroked-button color="accent">ОТПРАВИТЬ</button>
           </mat-card-actions>
+
+          </form>
 
         </mat-card>
       </div>

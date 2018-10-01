@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import {AppService} from '../../../app.service';
 
 @Component({
   selector: 'app-contacts',
@@ -11,7 +12,8 @@ export class ContactsComponent implements OnInit {
   public form: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private appService: AppService
   ) { }
 
   ngOnInit() {
@@ -28,7 +30,13 @@ export class ContactsComponent implements OnInit {
   }
 
   submit(data) {
-    console.log(data)
+    if (this.form.valid) {
+      this.appService
+        .sendRequest(data)
+        .subscribe(res => {
+          console.log(res);
+        });
+    }
   }
 
 }

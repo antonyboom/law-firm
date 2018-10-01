@@ -49,7 +49,7 @@ $mat-custom-palette: (
 
 $my-app-primary: mat-palette($mat-blue-grey, 500, 300, 700);
 $my-app-accent: mat-palette($mat-custom-palette, 500, 600, 700);
-$my-app-warn: mat-palette($mat-red, A700);
+$my-app-warn: mat-palette($mat-custom-palette, 500, 600, 700);
 
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
