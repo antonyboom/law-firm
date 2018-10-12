@@ -1,0 +1,58 @@
+<form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="submit(form.getRawValue())">
+  <mat-card-title>
+    <div class="input-row" [ngStyle]="{'color':'#edd07a'}">
+      ОБРАТНАЯ СВЯЗЬ
+    </div>
+  </mat-card-title>
+  <mat-card-content >
+    <div class="input-row">
+      <mat-form-field appearance="outline" color="accent" fxFlex>
+        <mat-label>Имя</mat-label>
+        <input matInput placeholder="" formControlName="firstName">
+        <mat-error *ngIf="form.get('firstName').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+          Поле обязательно для заполнения
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-row">
+      <mat-form-field appearance="outline" color="accent" fxFlex>
+        <mat-label>Фамилия</mat-label>
+        <input matInput place holder="" formControlName="lastName">
+        <mat-error *ngIf="form.get('lastName').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+          Поле обязательно для заполнения
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-row">
+      <mat-form-field appearance="outline" color="accent" fxFlex>
+        <mat-label>Почта</mat-label>
+        <input matInput placeholder="" formControlName="email">
+        <mat-error *ngIf="form.get('email').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+          Поле обязательно для заполнения
+        </mat-error>
+        <mat-error *ngIf="form.get('email').hasError('email')" [ngStyle]="{'font-size': '10px'}">
+          Неправильный почтовый адресс
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-row">
+      <mat-form-field appearance="outline" color="accent" fxFlex>
+        <mat-label>Ваш вопрос:</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMaxRows="3"
+                  formControlName="message"
+                  placeholder="">
+</textarea>
+        <mat-error *ngIf="form.get('message').hasError('required')" [ngStyle]="{'font-size': '10px'}">
+          Поле обязательно для заполнения
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="center center">
+    <button fxFlex="90" type="submit" mat-stroked-button color="accent">ОТПРАВИТЬ</button>
+  </mat-card-actions>
+</form>

@@ -2,20 +2,24 @@
 
   <mat-toolbar-row>
 
-    <div fxHide.lt-sm fxLayout="row wrap" fxLayoutGap="2rem" fxLayoutAlign="space-around center" [ngStyle]="{'margin':'0 auto'}">
+    <div fxHide.lt-md fxLayout="row wrap" fxLayoutGap="2rem" fxLayoutAlign="space-around center" [ngStyle]="{'margin':'0 auto'}">
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('home', 200)">ГЛАВНАЯ</button>
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('services', 200)">УСЛУГИ</button>
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('about', 200)">О НАС</button>
       <button mat-stroked-button class="custom-style" color="accent" (click)="scrollToAnchor('contacts', 200)">КОНТАКТЫ</button>
+      <button mat-raised-button class="custom-style support" color="accent" (click)="openDialog()">ОБРАТНАЯ ЗВЯЗЬ</button>
     </div>
 
-    <div fxHide.gt-xs fxLayoutAlign="center center" fxFlex="100">
+
+    <div fxHide.gt-sm fxLayoutAlign="space-between center" fxFlex="auto">
       <button  color="accent" mat-button [matMenuTriggerFor]="menu">
         <div class="menu"></div>
         <div class="menu"></div>
         <div class="menu"></div>
       </button>
+      <button mat-raised-button class="custom-style support" color="accent" (click)="openDialog()">ОБРАТНАЯ ЗВЯЗЬ</button>
     </div>
+
 
   </mat-toolbar-row>
 

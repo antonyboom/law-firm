@@ -10,7 +10,7 @@
 
     <div class="row">
 
-      <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" [ngStyle]="{'margin':'10px 0'}">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" [ngStyle]="{'margin':'10px 0'}">
         <mat-card class="contacts-card">
 
           <mat-card-content>
@@ -18,7 +18,7 @@
 
               <mat-list-item>
                 <mat-icon fxHide fxShow.gt-xs color="accent" mat-list-icon>phone</mat-icon>
-                <p mat-line class="contacts"> +7-499-391-13-63</p>
+                <p mat-line class="contacts"> +7-495-015-51-15</p>
                 <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
               </mat-list-item>
 
@@ -26,8 +26,8 @@
               <mat-list-item>
                 <mat-icon fxHide fxShow.gt-xs color="accent" mat-list-icon>pin_drop</mat-icon>
                 <p mat-line class="contacts">
-                  115191, Москва, <br fxHide fxShow.lt-sm>
-                  Гамсоновский переулок д.2</p>
+                  107113, Москва, <br fxHide fxShow.lt-sm>
+                  Сокольнический вал, 2А</p>
                 <mat-divider [ngStyle]="{'background':'#edd07a'}"></mat-divider>
               </mat-list-item>
 
@@ -40,96 +40,18 @@
 
             </mat-list>
 
-            <div class="map">
-              <iframe src="https://yandex.com/map-widget/v1/-/CBu-7SUoPB"
-                      frameborder="1"
+            <div [ngStyle]="{'height': init ? '100px' : '50vh'}">
+              <iframe src="https://yandex.ru/map-widget/v1/-/CBBSYRaHhD"
                       width="100%"
                       height="100%"
-                      allowfullscreen="true">
-              </iframe>
+                      frameborder="1"
+                      #iframe
+                      (load)="iframeLoaded()"
+                      allowfullscreen="true"></iframe>
             </div>
 
           </mat-card-content>
 
-        </mat-card>
-      </div>
-
-      <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" [ngStyle]="{'margin':'10px 0'}">
-        <mat-card class="contacts-card">
-
-          <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="submit(form.getRawValue())">
-
-          <mat-card-content>
-
-              <div class="input-row">
-                ОБРАТНАЯ СВЯЗЬ
-              </div>
-
-              <div class="input-row">
-
-                <mat-form-field appearance="outline" color="accent" fxFlex>
-                  <mat-label>Имя</mat-label>
-                  <input matInput placeholder="" formControlName="firstName">
-                  <mat-error *ngIf="form.get('firstName').hasError('required')" [ngStyle]="{'font-size': '10px'}">
-                    Поле обязательно для заполнения
-                  </mat-error>
-                </mat-form-field>
-
-              </div>
-
-              <div class="input-row">
-
-                <mat-form-field appearance="outline" color="accent" fxFlex>
-                  <mat-label>Фамилия</mat-label>
-                  <input matInput place holder="" formControlName="lastName">
-                  <mat-error *ngIf="form.get('lastName').hasError('required')" [ngStyle]="{'font-size': '10px'}">
-                    Поле обязательно для заполнения
-                  </mat-error>
-                </mat-form-field>
-
-              </div>
-
-              <div class="input-row">
-
-                <mat-form-field appearance="outline" color="accent" fxFlex>
-                  <mat-label>Почта</mat-label>
-                  <input matInput placeholder="" formControlName="email">
-                  <mat-error *ngIf="form.get('email').hasError('required')" [ngStyle]="{'font-size': '10px'}">
-                    Поле обязательно для заполнения
-                  </mat-error>
-                  <mat-error *ngIf="form.get('email').hasError('email')" [ngStyle]="{'font-size': '10px'}">
-                    Неправильный почтовый адресс
-                  </mat-error>
-                </mat-form-field>
-
-              </div>
-
-              <div class="input-row">
-
-                <mat-form-field appearance="outline" color="accent" fxFlex>
-                  <mat-label>Ваш вопрос:</mat-label>
-                  <textarea matInput
-                            cdkTextareaAutosize
-                            #autosize="cdkTextareaAutosize"
-                            cdkAutosizeMinRows="3"
-                            cdkAutosizeMaxRows="3"
-                            formControlName="message"
-                            placeholder="">
-                  </textarea>
-                  <mat-error *ngIf="form.get('message').hasError('required')" [ngStyle]="{'font-size': '10px'}">
-                    Поле обязательно для заполнения
-                  </mat-error>
-                </mat-form-field>
-
-              </div>
-
-          </mat-card-content>
-
-          <mat-card-actions fxLayoutAlign="center center">
-            <button fxFlex="90" type="submit" mat-stroked-button color="accent">ОТПРАВИТЬ</button>
-          </mat-card-actions>
-
-          </form>
 
         </mat-card>
       </div>

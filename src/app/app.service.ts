@@ -30,8 +30,7 @@ export class AppService {
 
     const formData = new FormData();
 
-    formData.append('firstName', data.firstName);
-    formData.append('lastName', data.lastName);
+    formData.append('name', data.firstName + ' ' + data.lastName);
     formData.append('email', data.email);
     formData.append('message', data.message);
 

@@ -1,38 +1,48 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-require_once 'mailer/PHPMailerAutoload.php';
 
-if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['message'])) {
+header('Content-type: application/json');
 
-    //create an instance of PHPMailer
-    $mail = new PHPMailer();
+$errors = '';
 
-    $mail->From = $_POST['email'];
-    $mail->FromFirstName = $_POST['firstName'];
-    $mail->FromLastName = $_POST['lastName'];
-    $mail->AddAddress('inbox@ca-triumph.ru'); //recipient
-    $mail->Subject = $_POST['email'];
-    $mail->Body =
+if(empty($errors))
+{
 
-    "От: " . $_POST['firstName'] -  $_POST['lastName'] . "\r\n\r\nСообщение: " . stripslashes($_POST['message']);
+	$postdata = file_get_contents("php://input");
+	$request = json_decode($postdata);
 
-    if (isset($_POST['ref'])) {
-        $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
-    }
+	$from_email = $request->email;
+	$message = $request->message;
+	$from_name = $request->name;
 
-    if(!$mail->send()) {
-        $formData = array('success' => false, 'message' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
-        echo json_encode($formData);
-        exit;
-    }
+	$to_email = $from_email;
 
-    $formData = array('success' => true, 'message' => 'Thanks! We have received your message.');
-    echo json_encode($formData);
+	$contact = "<p><strong>Name:</strong> $from_name</p>
+							<p><strong>Email:</strong> $from_email</p>";
+	$content = "<p>$message</p>";
 
+	$website = 'Angular Php Email Example';
+	$email_subject = "$website: Neue Nachricht von $from_name erhalten";
+
+	$email_body = '<html><body>';
+	$email_body .= "$contact $content";
+	$email_body .= '</body></html>';
+
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	$headers .= "From: $from_email\n";
+	$headers .= "Reply-To: $from_email";
+
+	mail($to_email,$email_subject,$email_body,$headers);
+
+	$response_array['status'] = 'success';
+	$response_array['from'] = $from_email;
+	echo json_encode($response_array);
+	echo json_encode($from_email);
+	header($response_array);
+	return $from_email;
 } else {
-
-    $formData = array('success' => false, 'message' => 'Please fill out the form completely.');
-    echo json_encode($formData);
-
+	$response_array['status'] = 'error';
+	echo json_encode($response_array);
+	header('Location: /error.html');
 }
+?>

@@ -12,7 +12,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatSnackBarModule,
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -28,6 +28,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { DescriptionComponent } from './ui/main/services/desctiption/description.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ContactUsComponent } from './ui/header/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {HttpClientModule} from '@angular/common/http';
     ServicesComponent,
     AboutComponent,
     ContactsComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatDialogModule,
     MatMenuModule,
     MatTabsModule,
+    MatSnackBarModule,
 
     AppRoutingModule,
     HttpClientModule,
@@ -67,6 +70,6 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DescriptionComponent]
+  entryComponents: [DescriptionComponent, ContactUsComponent]
 })
 export class AppModule { }

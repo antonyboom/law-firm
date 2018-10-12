@@ -175,10 +175,6 @@ h2.section-heading {
     width: 80vw !important;
   }
 
-  //.map {
-  //  display: none !important;
-  //}
-
 }
 
 .service-card, .info-card {
@@ -211,11 +207,9 @@ mat-list .mat-list-item .mat-list-icon, .mat-list .mat-list-option .mat-list-ico
   font-size: 48px !important;
 }
 
-
-.map {
-  height: 30vh;
-  max-height: 300px;
-}
+//.map {
+//  height: 50vh;
+//}
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: #edd07a;
@@ -223,4 +217,22 @@ mat-list .mat-list-item .mat-list-icon, .mat-list .mat-list-option .mat-list-ico
 
 .mat-form-field-label {
   color: #edd07a;
+}
+
+.mat-input-element {
+  color: #edd07a !important;
+}
+
+.mat-snack-bar-container {
+  font-size: 14px !important;;
+  color: #edd07a !important;
+}
+
+.contact-us-panel .mat-dialog-container{
+  background-color: #636363 !important;
+  border-radius: 5%;
+}
+
+.contact-us-backdrop {
+  background-color: #ffffff80 !important;
 }
