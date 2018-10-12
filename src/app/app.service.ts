@@ -18,19 +18,17 @@ export class AppService {
     this.subject.next(path);
   }
 
-  clearFragment() {
-    this.subject.next();
-  }
-
   getFragment(): Observable<any> {
     return this.subject.asObservable();
   }
 
   sendRequest (data) {
 
+    const fullName = data.firstName + ' ' + data.lastName;
+
     const formData = new FormData();
 
-    formData.append('name', data.firstName + ' ' + data.lastName);
+    formData.append('name', fullName);
     formData.append('email', data.email);
     formData.append('message', data.message);
 

@@ -1,6 +1,6 @@
 <?php
 
-header('Content-type: application/json');
+header('Content-Type: text/html; charset=utf-8');
 
 $errors = '';
 
@@ -14,21 +14,22 @@ if(empty($errors))
 	$message = $request->message;
 	$from_name = $request->name;
 
-	$to_email = $from_email;
+	$to_email = 'inbox@ca-triumph.ru';
 
 	$contact = "<p><strong>Name:</strong> $from_name</p>
 							<p><strong>Email:</strong> $from_email</p>";
 	$content = "<p>$message</p>";
 
-	$website = 'Angular Php Email Example';
-	$email_subject = "$website: Neue Nachricht von $from_name erhalten";
+	$website = 'Вопрос с сайта: ca-triumph';
+	$email_subject = "$website: from $from_name";
 
 	$email_body = '<html><body>';
 	$email_body .= "$contact $content";
 	$email_body .= '</body></html>';
 
 	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+  $headers .= "Content-Type: text/html; charset=utf-8";
+  $headers .= "Content-Transfer-Encoding: 8bit";
 	$headers .= "From: $from_email\n";
 	$headers .= "Reply-To: $from_email";
 
