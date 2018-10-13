@@ -12,16 +12,17 @@ if(empty($errors))
 
 	$from_email = $request->email;
 	$message = $request->message;
-	$from_name = $request->name;
+	$from_firstName = $request->firstName;
+	$from_lastName = $request->lastName;
 
 	$to_email = 'inbox@ca-triumph.ru';
 
-	$contact = "<p><strong>Name:</strong> $from_name</p>
+	$contact = "<p><strong>Name:</strong> $from_firstName $from_lastName</p>
 							<p><strong>Email:</strong> $from_email</p>";
 	$content = "<p>$message</p>";
 
 	$website = 'Вопрос с сайта: ca-triumph';
-	$email_subject = "$website: from $from_name";
+	$email_subject = "$website: from $from_firstName $from_lastName";
 
 	$email_body = '<html><body>';
 	$email_body .= "$contact $content";
